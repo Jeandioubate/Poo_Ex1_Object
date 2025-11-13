@@ -29,17 +29,27 @@ public class City {
 	private String country;
 	private int nbInhabitants;
 	
+	// Variable statique pour compter les instances
+    private static int countInstance = 0;
+	
 	// Nouveau constructeur (demande d'approbation)
 	public City(String name, String country, int nbInhabitants) {
 		setName(name);
 		setCountry(country);
 		setNbInhabitants(nbInhabitants);
+		countInstance++;
 	}
 	// Nouveau constructeur prenant deux paramètres
 	public City(String name, int nbInhabitants) {
 		setName(name);
 		this.country = "unknown";
 		setNbInhabitants(nbInhabitants);
+		countInstance++;
+	}
+	
+	// Méthode pour obtenir le nombre d'instances
+	public static int getcountInstance() {
+		return countInstance;
 	}
 	
 	// Mise en place des accesseurs
