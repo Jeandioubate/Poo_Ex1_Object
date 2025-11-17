@@ -1,4 +1,5 @@
 
+
 public class TestCity {
 /*	//1.1
 	// Création des instances
@@ -26,6 +27,7 @@ public class TestCity {
 
 	}
 */
+/*
 	//1.2
 	// Nouvelles instances
 	public static void main(String[] args) {
@@ -83,5 +85,7 @@ public class TestCity {
 		System.out.println("--- Compteur du nombre d'instances de la classe City ---");
 		System.out.println("Le nombre d'instances de la classe City est : " + City.getcountInstance());
 	}		
-
+*/
 }
+
+
