@@ -23,7 +23,7 @@ public class City {
 
 	}
 */
-	
+/*	
 	// Nouvels attributs gérés par l'adm
 	private String name;
 	private String country;
@@ -109,6 +109,80 @@ public class City {
 	 public String toString() {
 		 return "ville de " + name + " en " + country +  " ayant " + nbInhabitants + " habitants ";
 	 }
-	           
+*/
+/*
+    // Attributs publics, modification de la classe City avec TestPerson.java Exo 1.9
+    public String name;
+    public String country;
+    public int nbInhabitants;
+
+    // Constructeur avec 2 paramètres
+    public City(String name, String country) {
+        this.name = name;
+        this.country = country;
+        this.nbInhabitants = 0;
+    }
+
+    // Autres constructeurs
+    public City(String name, String country, int nbInhabitants) {
+        this.name = name;
+        this.country = country;
+        this.nbInhabitants = nbInhabitants;
+    }
+
+    public City(String name, int nbInhabitants) {
+        this.name = name;
+        this.country = "Inconnu";
+        this.nbInhabitants = nbInhabitants;
+    }
+	@Override
+	public String toString() {
+		return "[name=" + name + ", state=" + country + ", nbInhabitants=" + nbInhabitants + "}";
+	}
+*/
 	
+	// Modification de la class City Exo 2.0
+	
+    public String name;
+    public String country;
+    public int nbInhabitants;
+    public boolean informedPopulation; // Nouvel attribut pour savoir si la population est renseignée
+
+    // Constructeur avec 2 paramètres (sans population)
+    public City(String name, String country) {
+        this.name = name;
+        this.country = country;
+        this.nbInhabitants = 0;
+        this.informedPopulation = false;
+    }
+
+    // Constructeur avec population
+    public City(String name, String country, int nbInhabitants) {
+        this.name = name;
+        this.country = country;
+        this.nbInhabitants = nbInhabitants;
+        this.informedPopulation = true;
+    }
+
+    // Constructeur avec seulement le nom
+    public City(String name, int nbInhabitants) {
+        this.name = name;
+        this.country = "Inconnu";
+        this.nbInhabitants = nbInhabitants;
+        this.informedPopulation = true;
+    }
+
+    // Méthode pour afficher la ville avec format spécifique
+    public String getDisplayString() {
+        if (informedPopulation) {
+            return name + " , " + country + " , population " + name + " " + nbInhabitants + " d'habitants";
+        } else {
+            return name + " , " + country;
+        }
+    }
+
+    // Méthode pour vérifier si c'est une ville française
+    public boolean isFrenchCity() {
+        return "France".equalsIgnoreCase(country);
+    }
 }
